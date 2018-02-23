@@ -1,8 +1,6 @@
 ### The master file
 ### Change variables and so on here.
-#setwd("E:\\Dissertation\\one phi")
-#setwd("/work/03539/tg828383/dissertation/pilot/100_8")
-setwd("/home/mark/diss_may/")
+#setwd("/home/mark/diss_may/")
 
 nLGM <- 100
 phi <- 0.3
@@ -10,10 +8,10 @@ burnIn <- 2000
 nIter <- 12000
 nChain <- 3
 
-#Sets up the proper node
-args <- commandArgs(trailingOnly = TRUE)
-name <- ifelse(length(args)>0, args[1], "nodelist.txt")
-assign("hostnames", scan(name, what="", sep="\n"), envir = .GlobalEnv)
+#Sets up the proper node - this code was necessary on the supercomputer stampede
+#args <- commandArgs(trailingOnly = TRUE)
+#name <- ifelse(length(args)>0, args[1], "nodelist.txt")
+#assign("hostnames", scan(name, what="", sep="\n"), envir = .GlobalEnv)
 
 # begin workflow
 source("functions.R")
