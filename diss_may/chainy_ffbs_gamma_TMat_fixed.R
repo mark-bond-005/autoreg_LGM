@@ -1,3 +1,4 @@
+### This code conducts the Gibbs sampler to estimate the model.  
 # Each iteration takes about 4 seconds
 # The forward filter takes about 0.9 seconds
 # HLM level 1 takes 0.3 seconds. 
