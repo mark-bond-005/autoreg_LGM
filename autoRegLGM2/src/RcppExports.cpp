@@ -6,49 +6,6 @@
 
 using namespace Rcpp;
 
-// rcpparma_hello_world
-arma::mat rcpparma_hello_world();
-RcppExport SEXP autoRegLGM2_rcpparma_hello_world() {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(rcpparma_hello_world());
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_outerproduct
-arma::mat rcpparma_outerproduct(const arma::colvec& x);
-RcppExport SEXP autoRegLGM2_rcpparma_outerproduct(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_outerproduct(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_innerproduct
-double rcpparma_innerproduct(const arma::colvec& x);
-RcppExport SEXP autoRegLGM2_rcpparma_innerproduct(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_innerproduct(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_bothproducts
-Rcpp::List rcpparma_bothproducts(const arma::colvec& x);
-RcppExport SEXP autoRegLGM2_rcpparma_bothproducts(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_bothproducts(x));
-    return rcpp_result_gen;
-END_RCPP
-}
 // mvrnormArma
 arma::mat mvrnormArma(int n, arma::vec mu, arma::mat sigma);
 RcppExport SEXP autoRegLGM2_mvrnormArma(SEXP nSEXP, SEXP muSEXP, SEXP sigmaSEXP) {
@@ -77,27 +34,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // forFilt
-List forFilt(const arma::mat thet, const arma::mat zMat, const arma::vec alpha, const arma::vec beta1, const arma::vec beta2, const arma::vec ak, const arma::vec bk, const float varL1, const float m0, const float c0);
-RcppExport SEXP autoRegLGM2_forFilt(SEXP thetSEXP, SEXP zMatSEXP, SEXP alphaSEXP, SEXP beta1SEXP, SEXP beta2SEXP, SEXP akSEXP, SEXP bkSEXP, SEXP varL1SEXP, SEXP m0SEXP, SEXP c0SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::mat >::type thet(thetSEXP);
-    Rcpp::traits::input_parameter< const arma::mat >::type zMat(zMatSEXP);
-    Rcpp::traits::input_parameter< const arma::vec >::type alpha(alphaSEXP);
-    Rcpp::traits::input_parameter< const arma::vec >::type beta1(beta1SEXP);
-    Rcpp::traits::input_parameter< const arma::vec >::type beta2(beta2SEXP);
-    Rcpp::traits::input_parameter< const arma::vec >::type ak(akSEXP);
-    Rcpp::traits::input_parameter< const arma::vec >::type bk(bkSEXP);
-    Rcpp::traits::input_parameter< const float >::type varL1(varL1SEXP);
-    Rcpp::traits::input_parameter< const float >::type m0(m0SEXP);
-    Rcpp::traits::input_parameter< const float >::type c0(c0SEXP);
-    rcpp_result_gen = Rcpp::wrap(forFilt(thet, zMat, alpha, beta1, beta2, ak, bk, varL1, m0, c0));
-    return rcpp_result_gen;
-END_RCPP
-}
-// forFilt2
-List forFilt2(const arma::mat thet, const arma::mat zMat, const arma::vec alpha, const arma::vec beta1, const arma::vec beta2, const arma::vec ak, const arma::vec bk, const arma::vec m0, const float varL1, const float c0);
+List forFilt(const arma::mat thet, const arma::mat zMat, const arma::vec alpha, const arma::vec beta1, const arma::vec beta2, const arma::vec ak, const arma::vec bk, const arma::vec m0, const float varL1, const float c0);
 RcppExport SEXP autoRegLGM2_forFilt2(SEXP thetSEXP, SEXP zMatSEXP, SEXP alphaSEXP, SEXP beta1SEXP, SEXP beta2SEXP, SEXP akSEXP, SEXP bkSEXP, SEXP m0SEXP, SEXP varL1SEXP, SEXP c0SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
