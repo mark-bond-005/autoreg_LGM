@@ -6,7 +6,6 @@
 
 using namespace Rcpp;
 
-
 // mvrnormArma
 arma::mat mvrnormArma(int n, arma::vec mu, arma::mat sigma);
 RcppExport SEXP autoRegLGM2_mvrnormArma(SEXP nSEXP, SEXP muSEXP, SEXP sigmaSEXP) {
