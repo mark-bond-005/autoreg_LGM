@@ -17,7 +17,7 @@ List getMeanVar(arma::mat thet, arma::vec gammas,
 	{
 		arma::vec thetJ(nTimes);
 		arma::mat xTi(3, nTimes);
-		// The first column is a pain in the ass, so do it here.
+		// The first column is a pain, so code it manually.
 		xTi(0, 0) = 1;
 		xTi(1, 0) = 0;
 		xTi(2, 0) = 0;
@@ -44,8 +44,6 @@ List getMeanVar(arma::mat thet, arma::vec gammas,
 		arma::vec mean;
 		mean = D*d;
 		
-		// DONT JUDGE ME SENPAI!!!
-		// ;.;
 		meanOut(iLGM, 0) = mean(0);
 		meanOut(iLGM, 1) = mean(1);
 		meanOut(iLGM, 2) = mean(2);
