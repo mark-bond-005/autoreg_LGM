@@ -1,6 +1,8 @@
+### We could start the Gibbs sampler with completely random values, but that would be a terrible idea.
+# Instead most of the starting values are taken from frequentist statistics.
 
-### Grab initial theta values
 
+# I conduct a short factor analysis here to get initial ak, bk, and theta values. 
 allButConstrain <- "
   F1 = 1-30
 F2 = 31-60
@@ -28,7 +30,7 @@ bk <- coef(init.IRT, simplify=T)$items[,5][1:30]
 ak;bk
 thet <- fscores(init.IRT, method="MAP")
 
-### BEGIN CHAINS
+### BEGIN INCORPORATING 3 CHAINS
 nChain = 3
 chain_ak <- array(data=NA, dim=c(length(ak),nChain))
 chain_bk <- array(data=NA, dim=c(length(ak),nChain))
@@ -36,6 +38,7 @@ chain_thet <- array(data=NA, dim=c(dim(thet), nChain))
 chain_ak[ , 1] <- ak
 chain_bk[ , 1] <- bk
 chain_thet[ , , 1] <- thet
+# I add very minor noise here to differentiate the chains.
 chain_ak[ , 2:3] <- ak + rnorm(n= 2*length(ak), sd = 0.1)
 chain_bk[ , 2:3] <- bk + rnorm(n= 2*length(bk), sd = 0.1)
 chain_thet[ , , 2] <- thet + rnorm(n=dim(thet)[1]*dim(thet)[2], sd=0.1)
@@ -51,7 +54,6 @@ getHLM <- function(thet){
   init.Model <- lmer(theta ~ time + lag + (1 + time + lag | unit), data = thetTest)
   return(init.Model)
 }
-#1000 -0.826476589 -0.0703562280 0.62037894
 
 init.Model<- apply(chain_thet, 3, getHLM)
 #alpha <- coef(init.Model)[ , 1]; beta1 <- coef(init.Model)[ , 2]; beta2 <- coef(init.Model)[ , 3]
@@ -67,6 +69,7 @@ getTMat <- function(x){
 
 prechain_TMat <- lapply(init.Model, getTMat)
 chain_TMat <- array(data = c(prechain_TMat[[1]], prechain_TMat[[2]], prechain_TMat[[3]]), dim = c(3,3,3))
+# The code below is tedious, I should find a faster way. 
 chain_betas <- array(data=0, dim=c(nLGM, 3, 3))
 chain_betas[,1,1] <- as.vector(coef(init.Model[[1]])[[1]])[,1]
 chain_betas[,2,1] <- as.vector(coef(init.Model[[1]])[[1]])[,2]
