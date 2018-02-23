@@ -1,13 +1,8 @@
-# Correlations all greater than 0.88
-# We underestimate the variance of beta2 this way due to truncation issues
-# Alphas shifted somewhat since we code bk[1] = 0. 
 # Each iteration takes about 4 seconds
 # The forward filter takes about 0.9 seconds
 # HLM level 1 takes 0.3 seconds. 
+
 # Setup draw matrices and M matrix
-# 3 chains?
-# 100 iterations per condition
-# Vary beta1, beta2
   M <- nIter
   chain_thetDraw <- array(NA, dim=c(nLGM*4, M, nChain)) 
   chain_aDraw <- array(NA, dim=c(nItems, M, nChain)) 
@@ -19,7 +14,8 @@
   
   gamSum2 <- list();   gamSum <- list()
   zMat <- array(NA, dim = c(nLGM, nItems*4, nChain))
-  
+
+# Most of these 
 for (i in 1:nIter){
   # Get Zs
   #Sys.time()
