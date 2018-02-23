@@ -1,0 +1,9 @@
+Again, in this project I'm simulating and estimating an autoregressive latent growth model. Let me explain the big ideas here.
+
+There are (at least) two common types of education datasets. One type includes massive test calibrations, with thousands of participants. Another type consists of tiny research studies, where professors are lucky to get a couple hundred participants. It's good practice for these professors to use these thoroughly researched tests. However, before my dissertation, there was no clear way to use statistics from the big test calibration in the small research study. To do this, I needed to incorporate informative priors for item parameters. So, if the big test calibration indicates that the first item on the test is really easy, the tiny research study can use that information directly, rather than having to reestimate the difficulty of the first item. Reestimating this number could be hard with the professor's tiny sample size!
+
+Second-order latent growth models are the particular type of tiny research project I'm studying. These models estimate student growth over time, usually on standardized tests. They typically answer research questions like "why are some students learning more than others?" A good introductory reference for this is Hancock, Kuo, and Lawrence (2001).
+
+Finally, if we're studying growth, there is probably a great deal of autocorrelated data to deal with. So the Kalman filter is used, which is a bunch of clever matrix algebra that's used to make autocorrelated data converge faster. It has a long history of use in econometrics (Kalman, 1960; Hamilton, 1994), but nobody has used it in education until this project.
+
+I have done my best to explain everything in this document and in comments throughout, but what I am doing is really complicated. A better understanding would be gained by glancing over parts of my dissertation. Please contact me for a copy: mark_bond_005@utexas.edu
