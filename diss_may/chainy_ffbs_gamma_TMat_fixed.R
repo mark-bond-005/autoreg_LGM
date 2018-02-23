@@ -15,7 +15,7 @@
   gamSum2 <- list();   gamSum <- list()
   zMat <- array(NA, dim = c(nLGM, nItems*4, nChain))
 
-# Most of these 
+# Most of this code makes sense if you've read Fox and Glas (2001). This sampler follows that pretty closely. 
 for (i in 1:nIter){
   # Get Zs
   #Sys.time()
