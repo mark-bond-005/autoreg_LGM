@@ -1,7 +1,11 @@
+### Generates summary statistics for the Gibbs sampler.
+
 start_ <- burnIn
 N_ <- nIter
 
 M <- 3
+
+# The convenience functions below handle most of the summarizing I'll need to do. 
 rHat <- function(chain, start=start_, N=N_){
   M <- dim(chain)[2]
   chain <- chain[seq(from=start, to=N),]
@@ -52,7 +56,6 @@ print(varL1_Rhat)
 gamma_Rhat <- apply(chain_gammaDraw, 1, rHat)
 print(gamma_Rhat)
 
-#load("/media/obipam/OS/Documents and Settings/Mark Bond/My Documents/Dissertation/Estimation/responses once.RData")
 thetTrue <- c(theta1, theta2, theta3, theta4)
 TMatTrue <- c(1, 0, 0, 0, 0.17, 0, 0, 0, 0.273)
 betaTrue <- c(theta_, beta1_, beta2_)
