@@ -2,4 +2,4 @@ You will find here an R package I authored (autoRegLGM2), and a simulation folde
 
 To run the simulation, edit master_file.R in the simulation folder to your environment, edit the parameters to your heart's content, and run everything. Before doing so, please ensure that the packages in functions.R are installed. 
 
-The main way the code is limited right now is that only four time points are supported. That's something I'm getting around to fixing up. Finally, I will say that my dissertation has been going on for many years. I have done my best to eliminate all of the swearing in the source code, but I'm not sure I got it all. 
+The main way the code is limited right now is that only four time points are supported. That's something I'm getting around to fixing up. Additionally, for now only non-informative priors for item parameters are used. Finally, I will say that my dissertation has been going on for many years. I have done my best to eliminate all of the swearing in the source code, but I'm not sure I got it all. 
