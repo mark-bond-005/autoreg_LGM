@@ -1,0 +1,5 @@
+You will find here an R package I authored (autoRegLGM2), and a simulation folder. You will need to install the package before running the simulation. To install the package, use the "install" function in the devtools package. 
+
+To run the simulation, edit master_file.R in the simulation folder to your environment, edit the parameters to your heart's content, and run everything. Before doing so, please ensure that the packages in functions.R are installed. 
+
+Finally, I will say that my dissertation has been going on for many years. I have done my best to eliminate all of my swearing in the source code, but I'm not sure I got it all. 
