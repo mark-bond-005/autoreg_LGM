@@ -3,15 +3,6 @@
 
 using namespace Rcpp;
 
-// !!! draw multivariate samples
-// [[Rcpp::export]]
-arma::mat mvrnormArma(int n, arma::vec mu, arma::mat sigma) {
-	int ncols = sigma.n_cols;
-	arma::mat Y = arma::randn(n, ncols);
-	return arma::repmat(mu, 1, n).t() + Y * arma::chol(sigma);
-}
-
-
 // !!! Do matrix algebra for the level one equations
 // each person in the LGM gets his own intercept, slope, and AR mean & covar
 // [[Rcpp::export]]
