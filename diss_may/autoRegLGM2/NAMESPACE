@@ -1,3 +1,0 @@
-useDynLib(autoRegLGM2)
-importFrom(Rcpp, evalCpp)
-exportPattern("^[[:alpha:]]+")
