@@ -13,7 +13,7 @@ arma::mat mvrnormArma(int n, arma::vec mu, arma::mat sigma) {
 
 
 // !!! Do matrix algebra for the level one equations
-// each fella or fellette in the LGM gets his own intercept, slope, and AR mean & covar
+// each person in the LGM gets his own intercept, slope, and AR mean & covar
 // [[Rcpp::export]]
 List getMeanVar(arma::mat thet, arma::vec gammas, 
 			const float varL1, arma::mat TMat){
@@ -126,7 +126,6 @@ List forFilt(const arma::mat thet, const arma::mat zMat,
 		<< 0 << varL1 << arma::endr;
 
 	// !!! Begin the Kalman Filter
-	//Remember to start counting at zero. Why? GRRR!
 	for (int iLGM = 0; iLGM < nLGM; iLGM++)
 	{
 		//Populate the first column of the matrices only
@@ -235,7 +234,6 @@ List forFilt2(const arma::mat thet, const arma::mat zMat,
 	   << 0 << varL1 << arma::endr;
 
 	// !!! Begin the Kalman Filter
-	//Remember to start counting at zero. Why? GRRR!
 	for (int iLGM = 0; iLGM < nLGM; iLGM++)
 	{
 		//Populate the first column of the matrices only
