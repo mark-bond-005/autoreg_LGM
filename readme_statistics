@@ -6,4 +6,6 @@ Second-order latent growth models are the particular type of tiny research proje
 
 Finally, if we're studying growth, there is probably a great deal of autocorrelated data to deal with. So the Kalman filter is used, which is a bunch of clever matrix algebra that's used to make autocorrelated data converge faster. It has a long history of use in econometrics (Kalman, 1960; Hamilton, 1994), but nobody has used it in education until this project.
 
-I have done my best to explain everything in this document and in comments throughout, but what I am doing is really complicated. A better understanding would be gained by glancing over parts of my dissertation. Please contact me for a copy: mark_bond_005@utexas.edu
+I have done my best to explain everything in this document and in comments throughout, but what I am doing is really complicated. A better understanding would be gained by glancing over parts of my dissertation. A link is provided below.
+
+https://repositories.lib.utexas.edu/bitstream/handle/2152/65958/BOND-DISSERTATION-2018.pdf
