@@ -49,7 +49,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const arma::vec >::type m0(m0SEXP);
     Rcpp::traits::input_parameter< const float >::type varL1(varL1SEXP);
     Rcpp::traits::input_parameter< const float >::type c0(c0SEXP);
-    rcpp_result_gen = Rcpp::wrap(forFilt2(thet, zMat, alpha, beta1, beta2, ak, bk, m0, varL1, c0));
+    rcpp_result_gen = Rcpp::wrap(forFilt(thet, zMat, alpha, beta1, beta2, ak, bk, m0, varL1, c0));
     return rcpp_result_gen;
 END_RCPP
 }
